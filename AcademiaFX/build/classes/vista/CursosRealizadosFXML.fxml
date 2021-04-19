@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.CursosRealizadosFXMLController">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="1000.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Alumnos">
+            <items>
+              <MenuItem fx:id="miVerAlumnos" mnemonicParsing="false" onAction="#eventAction" text="Ver" />
+            </items>
+          </Menu>
+          <Menu fx:id="mnEmpresas" mnemonicParsing="false" text="Empresas">
+            <items>
+              <MenuItem fx:id="miVerEmpresas" mnemonicParsing="false" onAction="#eventAction" text="Ver" />
+            </items>
+          </Menu>
+          <Menu fx:id="mnCursos" mnemonicParsing="false" text="Cursos">
+            <items>
+                <MenuItem fx:id="miVerCursos" mnemonicParsing="false" onAction="#eventAction" text="Ver" />
+            </items>
+          </Menu>
+            <Menu fx:id="mnOposiciones" mnemonicParsing="false" text="Oposiciones">
+              <items>
+                <MenuItem fx:id="miVerOposiciones" mnemonicParsing="false" onAction="#eventAction" text="Ver" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Familia Profesional">
+              <items>
+                <MenuItem fx:id="miInsertarFP" mnemonicParsing="false" onAction="#eventAction" text="Añadir" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <HBox prefHeight="619.0" prefWidth="1000.0">
+         <children>
+            <TableView fx:id="tblCursos" prefHeight="575.0" prefWidth="680.0">
+              <columns>
+                <TableColumn prefWidth="680.0" text="CURSOS REALIZADOS">
+                     <columns>
+                        <TableColumn fx:id="clmNombre" prefWidth="300.0" text="NOMBRE" />
+                        <TableColumn fx:id="clmAmbito" prefWidth="300.0" text="FAMILIA PROFESIONAL" />
+                        <TableColumn fx:id="clmDuracion" text="DURACIÓN" />
+                     </columns>
+                  </TableColumn>
+              </columns>
+            </TableView>
+            <VBox prefHeight="575.0" prefWidth="320.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="75.0" prefWidth="320.0">
+                     <children>
+                        <Label text="Alumno">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="320.0">
+                     <children>
+                        <VBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="125.0">
+                           <children>
+                              <Label prefHeight="25.0" text="DNI:">
+                                 <VBox.margin>
+                                    <Insets right="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="25.0" text="Nombre:">
+                                 <VBox.margin>
+                                    <Insets right="10.0" top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="25.0" text="Apellido:">
+                                 <VBox.margin>
+                                    <Insets right="10.0" top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="100.0" prefWidth="195.0">
+                           <children>
+                              <Label fx:id="lblDni" prefHeight="25.0" prefWidth="175.0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblNombre" prefHeight="25.0" prefWidth="175.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblApellido" prefHeight="25.0" prefWidth="175.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="75.0" prefWidth="320.0">
+                     <children>
+                        <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#eventAction" prefWidth="110.0" text="Volver">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="325.0" prefWidth="320.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

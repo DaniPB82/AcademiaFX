@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.BuscarCandidatosFXMLController">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="1000.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Alumnos">
+            <items>
+              <MenuItem fx:id="miVerAlumnos" mnemonicParsing="false" onAction="#eventAction" text="Ver" />
+            </items>
+          </Menu>
+          <Menu fx:id="mnEmpresas" mnemonicParsing="false" text="Empresas">
+            <items>
+              <MenuItem fx:id="miVerEmpresas" mnemonicParsing="false" onAction="#eventAction" text="Ver" />
+            </items>
+          </Menu>
+          <Menu fx:id="mnCursos" mnemonicParsing="false" text="Cursos">
+            <items>
+                <MenuItem fx:id="miVerCursos" mnemonicParsing="false" onAction="#eventAction" text="Ver" />
+            </items>
+          </Menu>
+            <Menu fx:id="mnOposiciones" mnemonicParsing="false" text="Oposiciones">
+              <items>
+                <MenuItem fx:id="miVerOposiciones" mnemonicParsing="false" onAction="#eventAction" text="Ver" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Familia Profesional">
+              <items>
+                <MenuItem fx:id="miInsertarFP" mnemonicParsing="false" onAction="#eventAction" text="Añadir" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <HBox prefHeight="619.0" prefWidth="1000.0">
+         <children>
+            <TableView fx:id="tblAlumnos" prefHeight="575.0" prefWidth="680.0">
+              <columns>
+                <TableColumn prefWidth="680.0" text="CANDIDATOS">
+                     <columns>
+                      <TableColumn fx:id="clmDni" text="DNI" />
+                        <TableColumn fx:id="clmNombre" prefWidth="120.0" text="NOMBRE" />
+                        <TableColumn fx:id="clmApellido" prefWidth="120.0" text="APELLIDO" />
+                        <TableColumn fx:id="clmPoblacion" prefWidth="120.0" text="POBLACIÓN" />
+                        <TableColumn fx:id="clmTelefono" text="TELÉFONO" />
+                        <TableColumn fx:id="clmEmail" prefWidth="160.0" text="EMAIL" />
+                     </columns>
+                  </TableColumn>
+              </columns>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="miHistorial" mnemonicParsing="false" onAction="#eventAction" text="Historial" />
+                        <MenuItem fx:id="miCursosRealizados" mnemonicParsing="false" onAction="#eventAction" text="Cursos realizados" />
+                        <MenuItem fx:id="miOposicionesRealizadas" mnemonicParsing="false" onAction="#eventAction" text="Oposiciones realizadas" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+            <VBox prefHeight="575.0" prefWidth="320.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="75.0" prefWidth="320.0">
+                     <children>
+                        <Label text="Buscar Candidatos">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="75.0" prefWidth="320.0">
+                     <children>
+                        <VBox alignment="TOP_RIGHT" prefHeight="75.0" prefWidth="125.0">
+                           <children>
+                              <Label prefHeight="25.0" text="Familia Prof:">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets right="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label prefHeight="25.0" text="Desde la fecha:">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="75.0" prefWidth="195.0">
+                           <children>
+                              <ComboBox fx:id="cbbxAmbito" prefHeight="25.0" prefWidth="175.0">
+                                 <VBox.margin>
+                                    <Insets right="20.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <DatePicker fx:id="dpInicio" prefHeight="25.0" prefWidth="175.0">
+                                 <VBox.margin>
+                                    <Insets right="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="75.0" prefWidth="320.0">
+                     <children>
+                        <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#eventAction" prefWidth="110.0" text="Buscar">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#eventAction" prefWidth="110.0" text="Cancelar">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="350.0" prefWidth="320.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
